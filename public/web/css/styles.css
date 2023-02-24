@@ -1,0 +1,657 @@
+/*General Styles*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/*---------------------------------------------------------------------------Backgrounds---------------------------------------------------------------------------*/
+
+#index{
+    background-color: #593729;
+}
+
+#contact{
+    background-color: #ff8355;
+}
+#menu{
+    background-color: #515151;
+}
+#us{
+    background-color: #222831;
+}
+#signup{
+    background-color: #bbc6d3;
+}
+/*---------------------------------------------------------------------------Pages Style---------------------------------------------------------------------------*/
+
+#index-main{
+    margin-top: 40px;
+    height: 85vh;
+}
+
+#contact-main{
+    margin-top: 90px;
+    height: 55vh;
+}
+
+/*---------------------------------------------------------------------------Button Style---------------------------------------------------------------------------*/
+
+.btn-contact{
+    text-decoration: none;
+    padding: 8px;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    color: #262626;
+    -webkit-box-shadow: 2px 8px 15px 0px rgba(0,0,0,0.36);
+    -moz-box-shadow: 2px 8px 15px 0px rgba(0,0,0,0.36);
+    box-shadow: 2px 8px 15px 0px rgba(0,0,0,0.36);
+    cursor: pointer;
+    transition: background, .5s;
+}
+
+.btn-contact:hover{
+    background: #ffe955;
+    color: #ffffff;
+    transition: 0.3s;
+    border-radius: 12px;
+    border: 1px solid #ffffff;
+}
+.btn-carousel{
+    text-decoration: none;
+    padding: 8px;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    color: #262626;
+    -webkit-box-shadow: 2px 8px 15px 0px rgba(0,0,0,0.36);
+    -moz-box-shadow: 2px 8px 15px 0px rgba(0,0,0,0.36);
+    box-shadow: 2px 8px 15px 0px rgba(0,0,0,0.36);
+    cursor: pointer;
+    transition: background, .5s;
+}
+
+.btn-carousel:hover{
+    background: #ff8355;
+    color: #ffffff;
+    transition: 0.3s;
+    border-radius: 12px;
+    border: 1px solid #ffffff;
+}
+
+.btn-signup{
+    font-size: 1rem;
+    margin-top: 1.8rem;
+    padding: 10px 0;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 90%;
+    background: #ff8355;
+    cursor: pointer;
+    color: #fff;
+}
+
+.btn-signup:hover{
+    background: #fd7644;
+}
+
+/*---------------------------------------------------------------------------Nav Styles---------------------------------------------------------------------------*/
+
+nav{
+    background-color: #202020;
+    box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+}
+
+.navbar-brand a{
+    font-size: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Anton', sans-serif;
+}
+
+.nav-item a{
+    color: #fff;
+}
+
+.nav-item a:hover{
+    color: #ffe955;
+}
+
+.navbar-toggler{
+    background-color: #393939 !important;
+}
+
+/*---------------------------------------------------------------------------Footer Styles---------------------------------------------------------------------------*/
+
+.container-footer{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.section-footer a, h4{
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.section-footer a:hover{
+    color: #ffe955 !important;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.footer-icons {
+    font-size: 30px;
+    padding: 5px;
+}
+
+.tittle-footer{
+    margin-bottom: 10px;
+}
+
+.text-mid-footer {
+    text-align: center;
+}
+
+#tittle-footer{
+    font-family: 'Anton', sans-serif;
+    font-size: 35px;
+}
+#tittle-footer-2{
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+}
+
+p{
+    color: #fff;
+}
+
+/*---------------------------------------------------------------------------Carousel Styles---------------------------------------------------------------------------*/
+
+.carousel-slide{
+    box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+}
+
+.carousel-caption h1{
+    text-shadow: -3px 2px 4px rgba(0,0,0,0.71);
+}
+
+.carousel-item{
+    height: 80vh;
+} 
+
+.d-img{
+    height: 100%;
+    object-fit: cover;
+}
+
+/*---------------------------------------------------------------------------Index Styles---------------------------------------------------------------------------*/
+
+.container-promo{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card-promo{
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+    border-radius: 5px;
+    background-color: #262626;
+    color: #ffffff;
+    margin: 40px;
+    width: 500px;
+    padding: 20px;
+    min-width: 385px;
+    box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+    -webkit-box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+    -moz-box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+}
+.img-promo{
+    width: 175px;
+    min-width: 175px;
+    height: 175px;
+    margin-right: 15px;
+    position: relative;
+    border-radius: 100%;
+    border: 5px solid #ffbe33;
+    overflow: hidden;
+}
+.img-promo img{
+    width: 100%;
+    transition: all .2s;
+}
+.img-promo:hover img{
+    transform: scale(1.1);
+}
+.text-promo{
+    margin-left: 50px;
+}
+.text-promo h5{
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+}
+.text-promo h6{
+    font-family: 'Anton', sans-serif;
+    margin: 10px 0;
+    padding: 10px;
+}
+.text-promo span{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/*---------------------------------------------------------------------------Contact Styles---------------------------------------------------------------------------*/
+
+.container-contact{
+    display: flex;
+}
+
+.form-container{
+    width: 50%;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.form-inputs{
+    margin-bottom: 12px;
+}
+
+.tittle-contact h1{
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: 'Anton', sans-serif;
+}
+
+.tittle-contact p{
+    font-weight: 100;
+}
+.label-contact{
+    color: #fff;
+    padding-top: 0;
+    padding-left: 5px;
+    padding-bottom: 10px;
+}
+
+/*---------------------------------------------------------------------------Menu Styles---------------------------------------------------------------------------*/
+
+.container-menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.tittle-menu h1{
+    margin: 30px 0px;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    color: #fff;
+}
+
+.tittle-menu-2 h2{
+    margin: 30px 0px;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    color: #ffffff;
+}
+
+#burgers{
+    background-color: #262626;
+    box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.30);
+    -webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.30);
+    -moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.30);
+}
+
+#fries{
+    background-color: #262626;
+    box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+}
+
+#drinks{
+    background-color: #262626;
+    box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+}
+
+.list-menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.list-menu li{
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.list-menu li a{
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+}
+
+.card-menu{
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    overflow: hidden;
+    background-color: #262626;
+    box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+    -webkit-box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+    -moz-box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+}
+
+.img-card{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: #f1f2f3;
+    border-radius: 0 0 0 45px;
+    padding: 40px;
+}
+
+.img-card img{
+    max-height: 170px;
+    transition: transform .5s
+}
+
+.img-card:hover img{
+    transform: scale(1.1);
+}
+
+.card-menu h3{
+    color: #fff;
+    padding: 15px 20px;
+}
+
+.description{
+    color: #fff;
+    padding: 5px 20px;
+}
+
+.price-add-to-cart{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    margin-bottom: 15px;
+}
+
+.price{
+    color: #fff;
+}
+
+.price-add-to-cart a{
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #ff8355;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.go-up{
+    text-align: center;
+    padding: 50px;
+}
+
+/*---------------------------------------------------------------------------Us Styles---------------------------------------------------------------------------*/
+
+.us-container{
+    display: flex;
+}
+
+.text-us h2{
+    color: #fff;
+    font-family: 'Anton', sans-serif;
+}
+
+.locals h3{
+    color: #fff;
+}
+
+.img-us{
+    width: 40%;
+    padding: 45px;
+}
+
+.img-us img{
+    width: 100%;
+    max-width: 430px;
+}
+
+.text-us{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 40px;
+    justify-content: center;
+}
+
+.text-us p{
+    padding: 10px 0px;
+}
+
+.locals{
+    text-align: center;
+    padding: 10px;
+    background-color: #262626;
+    box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+    -webkit-box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+    -moz-box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+}
+
+.locals h3{
+    font-family: 'Anton', sans-serif;
+}
+
+.text-sucursal{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.text-sucursal h4{
+    font-family: 'Anton', sans-serif;
+    margin-top: 10px;
+}
+
+.text-sucursal p{
+    font-size: small;
+}
+
+.us-maps-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.maps{
+    padding: 20;
+    box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+    -webkit-box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+    -moz-box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+}
+/*---------------------------------------------------------------------------Sign Up Styles---------------------------------------------------------------------------*/
+
+.signup-container{
+    width: 330px;
+    padding: 2rem 1rem;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+.tittle-signup h1{
+    font-size: 2rem;
+    color: #262626;
+    margin-bottom: 1.2rem;
+}
+form input{
+    width: 92%;
+    outline: none;
+    border: 1px solid #fff;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background: #e4e4e4;
+}
+input:focus{
+    border: 1px solid rgb(192, 192, 192);
+}
+.terms{
+    margin-top: 0.2rem;
+}
+.terms input{
+    height: 1em;
+    width: 1em;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.terms label{
+    font-size: 0.7rem;
+}
+.terms a{
+    color: #ff8355;
+    text-decoration: none;
+}
+.member{
+    font-size: 0.8rem;
+    margin-top: 1.4rem;
+    color: #262626;
+}
+.member a{
+    color: #ff8355;
+    text-decoration: none;
+}
+.recover{
+    text-align: right;
+    font-size: 0.7rem;
+    margin: 0.3rem 1.4rem 0 0;
+}
+.recover a{
+    text-decoration: none;
+    color: #464647;
+}
+.password-recover{
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+/*---------------------------------------------------------------------------Responsive Styles---------------------------------------------------------------------------*/
+
+@media (max-width: 1200px){
+    .text-mid-footer {
+        font-size: 10px;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 1160px){
+    .card-promo{
+        flex-direction: column;
+        width: 385px;
+        text-align: center;
+        height: 385px;
+    }
+    .img-promo{
+        margin-bottom: 15px;
+    }
+    .text-promo{
+        margin-left: 0px
+    }
+}
+@media (max-width: 939px){
+    .card-promo{
+        flex-direction: row;
+        width: 630px;
+        height: 220px;
+    }
+    .img-promo{
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 767px){
+    .us-container{
+        flex-direction: column-reverse;
+        justify-content: center;
+    } 
+    .img-us{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 40px;
+    }
+    .text-us{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 40px;
+        justify-content: center;
+        text-align: center;
+    }
+    .container-footer{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .section-footer{
+        margin: 20px 0px;
+    }
+    .carousel-item{
+        height: 50vh;
+    }
+    #index-main {
+        margin-top: 40px;
+        height: 52vh;
+    }
+    .container-contact{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .form-container{
+        width: 80%;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    #contact-main {
+        margin-top: 50px;
+        height: 70vh;
+    }
+}
