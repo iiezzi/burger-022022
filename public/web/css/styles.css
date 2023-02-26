@@ -14,14 +14,14 @@ html{
 /*---------------------------------------------------------------------------Backgrounds---------------------------------------------------------------------------*/
 
 #index{
-    background-color: #593729;
+    background-color: #363636;
 }
 
 #contact{
     background-color: #ff8355;
 }
 #menu{
-    background-color: #515151;
+    background-color: #bbc6d3;
 }
 #us{
     background-color: #222831;
@@ -29,6 +29,10 @@ html{
 #signup{
     background-color: #bbc6d3;
 }
+#thankspostulation{
+    background-color: #ff8355;
+}
+
 /*---------------------------------------------------------------------------Pages Style---------------------------------------------------------------------------*/
 
 #index-main{
@@ -567,6 +571,29 @@ input:focus{
     margin-top: 20px;
     margin-bottom: 5px;
 }
+
+/*---------------------------------------------------------------------------Thanks Style---------------------------------------------------------------------------*/
+
+.container-thanks{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 0px 40px;
+}
+
+.container-thanks h1{    
+    font-family: 'Anton', sans-serif;
+    color: #fff;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+.container-thanks p{    
+    font-weight: 100;
+}
+
 /*---------------------------------------------------------------------------Responsive Styles---------------------------------------------------------------------------*/
 
 @media (max-width: 1200px){

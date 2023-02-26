@@ -31,165 +31,21 @@
                 <li><a href="#drinks">Bebidas</a></li>
             </ul>
         </div>
-        <?php print_r($aProductos) ?>
-        <div class="tittle-menu-2" id="burgers">
-            <h2>Hamburguesas</h2>
-        </div>
         <div class="container-menu">
+            @foreach($aProductos as $producto)
             <div class="card-menu">
                 <div class="img-card">
-                    <img src="web/images/burger-1.png" alt="">
+                    <img src="/files/{{ $producto->imagen }}" alt="">
                 </div>
-                <h3>Yukatan</h3>
+                <h3>{{ $producto->nombre }}</h3>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
                     explicabo!</p>
                 <div class="price-add-to-cart">
-                    <p class="price">1750$</p>
+                    <p class="price">${{ $producto->precio }}</p>
                     <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
             </div>
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/burger-2.png" alt="">
-                </div>
-                <h3>Big Kahuna</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">1670$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/burger-3.png" alt="">
-                </div>
-                <h3>Maverick</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">1450$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/burger-4.png" alt="">
-                </div>
-                <h3>Campestre</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">1800$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/burger-5.png" alt="">
-                </div>
-                <h3>Brooklyn</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">1500$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/burger-6.png" alt="">
-                </div>
-                <h3>Punta Bigotes</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">1750$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="tittle-menu-2" id="fries">
-            <h2>Papas Fritas</h2>
-        </div>
-        <div class="container-menu">
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/fries-1.png" alt="">
-                </div>
-                <h3>Clasicas</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">1200$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/fries-2.png" alt="">
-                </div>
-                <h3>Picantes</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">950$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/fries-3.png" alt="">
-                </div>
-                <h3>Capprese</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">850$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="tittle-menu-2" id="drinks">
-            <h2>Bebidas</h2>
-        </div>
-        <div class="container-menu">
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/drink-1.png" alt="">
-                </div>
-                <h3>Coca-Cola</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">500$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/drink-2.png" alt="">
-                </div>
-                <h3>Sprite</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">500$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="card-menu">
-                <div class="img-card">
-                    <img src="web/images/drink-3.png" alt="">
-                </div>
-                <h3>Fanta</h3>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quisquam quaerat
-                    explicabo!</p>
-                <div class="price-add-to-cart">
-                    <p class="price">500$</p>
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="go-up">
             <a href="#menu-main" class="btn-carousel">Volver al inicio</a>

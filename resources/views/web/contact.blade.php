@@ -31,12 +31,12 @@
             <div class="form-container">
                 <form action="" enctype="multipart/form-data" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
-                    <input type="text" name="nombre" placeholder="Nombre" class="form-control form-inputs">
-                    <input type="text" name="apellido" placeholder="Apellido" class="form-control form-inputs">
-                    <input type="tel" name="telefono" placeholder="Teléfono" class="form-control form-inputs">
-                    <input type="email" name="email" placeholder="Correo" class="form-control form-inputs">
-                    <label for="curriculum" class="label-contact">Adjunta tu curriculum vitae:</label>
-                    <input type="file" name="curriculum" placeholder="Curriculum" class="form-control form-inputs">
+                    <input type="text" name="txtNombre" placeholder="Nombre" class="form-control form-inputs">
+                    <input type="text" name="txtApellido" placeholder="Apellido" class="form-control form-inputs">
+                    <input type="tel" name="txtTelefono" placeholder="Teléfono" class="form-control form-inputs">
+                    <input type="email" name="txtCorreo" placeholder="Correo" class="form-control form-inputs">
+                    <label for="txtCurriculum" class="label-contact">Adjunta tu curriculum vitae:</label>
+                    <input type="file" name="txtCurriculum" placeholder="Curriculum" class="form-control form-inputs">
                     <button type="submit" id="btnSend" name="btnSend" class="btn-contact">ENVIAR</button>
                 </form>
             </div>
