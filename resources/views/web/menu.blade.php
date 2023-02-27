@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="web/css/fontawesome 6.3.0/css/all.min.css">
     <link rel="stylesheet" href="web/css/fontawesome 6.3.0/css/fontawesome.min.css">
     <script src="web/css/bootstrap 5.3.0 alpha 1/js/bootstrap.bundle.min.js"></script>
+    <script src="web/js/jquery-3.6.3.js"></script>
+    <script src="web/js/script.js"></script>
     <link rel="icon" href="web/images/burger-svgrepo-com.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,20 +22,19 @@
 <body id="menu">
     @extends ('web.template')
     @section('content')
-    <main id="menu-main">
+    <main>
         <div class="tittle-menu">
             <h1>Echale un vistazo a nuestro menú</h1>
         </div>
-        <div class="list-menu">
-            <ul>
-                <li><a href="#burgers">Hamburguesas</a></li>
-                <li><a href="#fries">Papas Fritas</a></li>
-                <li><a href="#drinks">Bebidas</a></li>
-            </ul>
-        </div>
+            <div class="container-category">
+                <a href="#" class="category_item" category="all">Todos</a>
+                @foreach($aCategorias as $categoria)
+                <a href="#" class="category_item" category="{{ $categoria->idcategoria }}">{{ $categoria->nombre }}</a>
+                @endforeach
+            </div>
         <div class="container-menu">
             @foreach($aProductos as $producto)
-            <div class="card-menu">
+            <div class="card-menu" category="{{ $producto->fk_idcategoria }}">
                 <div class="img-card">
                     <img src="/files/{{ $producto->imagen }}" alt="">
                 </div>
@@ -48,7 +49,7 @@
             @endforeach
         </div>
         <div class="go-up">
-            <a href="#menu-main" class="btn-carousel">Volver al inicio</a>
+            <a href="#menu" class="btn-carousel">Volver al inicio</a>
         </div>
     </main>
     <footer>

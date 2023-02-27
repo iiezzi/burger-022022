@@ -292,6 +292,35 @@ p{
 
 /*---------------------------------------------------------------------------Menu Styles---------------------------------------------------------------------------*/
 
+.container-category{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container-category a{
+    text-decoration: none;
+    padding: 6px 40px;
+    margin: 10px;
+    font-size: 16px;
+    color: #262626;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-category a:hover{
+    opacity: 0.8;
+}
+
+.container-category .ct_item-active{
+    background-color: #262626;
+    color: #fff;
+}
+
 .container-menu{
     display: flex;
     flex-wrap: wrap;
@@ -299,58 +328,11 @@ p{
 }
 
 .tittle-menu h1{
+    font-size: 50px;
     margin: 30px 0px;
     padding: 5px;
     text-align: center;
     font-family: 'Anton', sans-serif;
-    color: #fff;
-}
-
-.tittle-menu-2 h2{
-    margin: 30px 0px;
-    padding: 5px;
-    text-align: center;
-    font-family: 'Anton', sans-serif;
-    color: #ffffff;
-}
-
-#burgers{
-    background-color: #262626;
-    box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.30);
-    -webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.30);
-    -moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.30);
-}
-
-#fries{
-    background-color: #262626;
-    box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
-}
-
-#drinks{
-    background-color: #262626;
-    box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
-}
-
-.list-menu ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-}
-
-.list-menu li{
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.list-menu li a{
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 15px;
     color: #fff;
 }
 
@@ -366,6 +348,7 @@ p{
     box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
     -webkit-box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
     -moz-box-shadow: 8px 8px 15px -10px rgba(0,0,0,0.70);
+    transition: all .4s;
 }
 
 .img-card{
