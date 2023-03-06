@@ -22,9 +22,9 @@
     @section('content')
     <main id="main-thankspostulation">
         <div class="container-thanks">
-            <h1>¡Muchas gracias por enviar tu postulación!</h1>
-            <p>Revisaremos tu perfil y te daremos una respuesta a travez de tu correo electronico,esperamos que disfrutes de la experiencia "Burger SRL".</p>
-            <a href="/" class="btn-contact">Volver a Burger SRL</a>
+            <h1>¡Muchas gracias por registrarte!</h1>
+            <p>Ahora, inicia sesión para poder comprar en nuestro menú takeaway, esperamos que disfrutes de la experiencia "Burger SRL".</p>
+            <a href="/login" class="btn-contact">Iniciar sesion</a>
         </div>
     </main>
 </body>

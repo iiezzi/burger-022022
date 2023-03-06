@@ -24,12 +24,21 @@ Route::group(array('domain' => '127.0.0.1'), function () {
     Route::get('/thankspostulation', 'ControladorWebThanksPostulation@index');
     
     Route::get('/menu', 'ControladorWebMenu@index');
+    Route::get('/cart', 'ControladorWebCart@index');
 
     Route::get('/login', 'ControladorWebLogin@index');
     Route::post('/login', 'ControladorWebLogin@ingresar');
 
+    Route::get('/logout', 'ControladorWebLogout@logout');
+
     Route::get('/signup', 'ControladorWebSignup@index');
-    Route::post('/signup', 'ControladorWebSignup@eviar');
+    Route::post('/signup', 'ControladorWebSignup@enviar');
+    Route::get('/thanksregistration', 'ControladorWebThanksRegistration@index');
+
+    Route::get('/myaccount', 'ControladorWebMyAccount@index');
+
+    Route::get('/replacepassword', 'ControladorWebReplacePassword@index');
+    Route::post('/replacepassword', 'ControladorWebReplacePassword@guardar');
 
     Route::get('/recoverpassword', 'ControladorWebRecoverpassword@index');
     Route::post('/recoverpassword', 'ControladorWebRecoverpassword@enviar');

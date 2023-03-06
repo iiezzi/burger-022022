@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Entidades\Sucursal;
-
+use Session;
 class ControladorWebUs extends Controller
 {
     public function index()

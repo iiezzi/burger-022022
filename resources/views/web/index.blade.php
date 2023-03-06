@@ -29,11 +29,11 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="web/images/Slider-2.jpeg" class="d-block w-100 d-img" alt="...">
+                    <img src="web/images/Slider-3.png" class="d-block w-100 d-img" alt="...">
                     <div class="carousel-caption text-start top-0">
                         <h1>Burguer Srl.</h1>
-                        <p>Las mejores hamburguesas del país, visitanos en nuestro local más cercano.</p>
-                        <a class="btn-carousel" href="/us">Ver locales</a>
+                        <p>Las mejores hamburguesas del país.</p>
+                        <a class="btn-carousel" href="/us">Ver sucursales</a>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="web/images/Slider-3.jpg" class="d-block w-100 d-img" alt="...">
+                    <img src="web/images/Slider-2.jpg" class="d-block w-100 d-img" alt="...">
                     <div class="carousel-caption text-end top-0">
                         <h1>¿Quieres ser parte de nuestro equipo?.</h1>
                         <p>Presioná el botón y completa el formulario.</p>

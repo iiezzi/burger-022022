@@ -31,12 +31,12 @@
                 <input type="text" id="txtDni" name="txtDni" placeholder="Documento (D.N.I)">
                 <input type="text" id="txtCelular" name="txtCelular" placeholder="Celular">
                 <input type="password" id="txtClave" name="txtClave" placeholder="Clave">
+                <div class="terms">
+                    <input type="checkbox" name="" id="checkbox">
+                    <label for="checkbox"> Estoy de acuerdo con los <a href="">Términos & Condiciones</a></label>
+                </div>
+                <button type="submit" id="btnRegister" name="btnRegister" class="btn-signup">Registrarse</button>
             </form>
-            <div class="terms">
-                <input type="checkbox" name="" id="checkbox">
-                <label for="checkbox"> Estoy de acuerdo con los <a href="">Términos & Condiciones</a></label>
-            </div>
-            <button type="submit" id="btnRegister" name="btnRegister" class="btn-signup">Registrarse</button>
             <div class="member">
                 ¿Ya estás registrado? <a href="/login">Inicia sesión aquí.</a>
             </div>

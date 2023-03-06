@@ -43,6 +43,7 @@
                     explicabo!</p>
                 <div class="price-add-to-cart">
                     <p class="price">${{ $producto->precio }}</p>
+                    <input type="hidden" name="txtIdProduct" value="{{ $producto->idproducto }}">
                     <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
             </div>

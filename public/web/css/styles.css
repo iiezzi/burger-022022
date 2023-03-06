@@ -14,7 +14,7 @@ html{
 /*---------------------------------------------------------------------------Backgrounds---------------------------------------------------------------------------*/
 
 #index{
-    background-color: #363636;
+    background-color: #000000;
 }
 
 #contact{
@@ -24,10 +24,13 @@ html{
     background-color: #bbc6d3;
 }
 #us{
-    background-color: #222831;
+    background-color: #ffc155;
 }
 #signup{
     background-color: #bbc6d3;
+}
+#myaccount{
+    background-color: #262626;
 }
 #thankspostulation{
     background-color: #ff8355;
@@ -62,7 +65,7 @@ html{
 }
 
 .btn-contact:hover{
-    background: #ffe955;
+    background: #ffc155;
     color: #ffffff;
     transition: 0.3s;
     border-radius: 12px;
@@ -131,8 +134,8 @@ nav{
     color: #ffe955;
 }
 
-.navbar-toggler{
-    background-color: #393939 !important;
+.navbar-toggler-icon{
+    color: #fff !important;
 }
 
 /*---------------------------------------------------------------------------Footer Styles---------------------------------------------------------------------------*/
@@ -356,7 +359,7 @@ p{
     justify-content: center;
     width: 100%;
     background: #f1f2f3;
-    border-radius: 0 0 0 45px;
+    border-radius: 0 0 45px 0;
     padding: 40px;
 }
 
@@ -426,6 +429,7 @@ p{
 .img-us{
     width: 40%;
     padding: 45px;
+    padding-left: 100px;
 }
 
 .img-us img{
@@ -439,6 +443,7 @@ p{
     width: 60%;
     padding: 40px;
     justify-content: center;
+    text-align: center;
 }
 
 .text-us p{
@@ -579,14 +584,6 @@ input:focus{
 
 /*---------------------------------------------------------------------------Responsive Styles---------------------------------------------------------------------------*/
 
-@media (max-width: 1200px){
-    .text-mid-footer {
-        font-size: 10px;
-        margin-left: 40px;
-        margin-right: 40px;
-        margin-bottom: 20px;
-    }
-}
 @media (max-width: 1160px){
     .card-promo{
         flex-direction: column;

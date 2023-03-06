@@ -23,15 +23,20 @@
     <main id="signup-main">
         <div class="signup-container">
             <h1 class="tittle-signup">Inicia sesión</h1>
+            @if(isset($msg))
+            <div class="alert alert-danger" role="alert">
+                {{$msg}}
+            </div>
+            @endif
             <form action="" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
-                <input type="text" id="txtUsuario" name="txtUsuario" placeholder="Usuario">
+                <input type="text" id="txtCorreo" name="txtCorreo" placeholder="Correo electrónico">
                 <input type="password" id="txtClave" name="txtClave" placeholder="Contraseña">
                 <div class="recover">
                     <a href="/recoverpassword">¿Olvidaste tu contraseña?</a>
                 </div>
+                <button type="submit" id="btnSend" name="btnSend" class="btn-signup">Ingresar</button>
             </form>
-            <button type="submit" id="btnSend" name="btnSend" class="btn-signup">Ingresar</button>
             <div class="member">
                 ¿No estás registrado?<a href="/signup"> Registrate aquí.</a>
             </div>
