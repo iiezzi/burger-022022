@@ -14,14 +14,14 @@ html{
 /*---------------------------------------------------------------------------Backgrounds---------------------------------------------------------------------------*/
 
 #index{
-    background-color: #000000;
+    background-color: #262626;
 }
 
 #contact{
     background-color: #ff8355;
 }
 #menu{
-    background-color: #bbc6d3;
+    background-color: #333;
 }
 #us{
     background-color: #ffc155;
@@ -36,7 +36,7 @@ html{
     background-color: #ff8355;
 }
 
-/*---------------------------------------------------------------------------Pages Style---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------Pages Styles---------------------------------------------------------------------------*/
 
 #index-main{
     margin-top: 40px;
@@ -48,7 +48,7 @@ html{
     height: 55vh;
 }
 
-/*---------------------------------------------------------------------------Button Style---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------Button Styles---------------------------------------------------------------------------*/
 
 .btn-contact{
     text-decoration: none;
@@ -95,7 +95,7 @@ html{
 
 .btn-signup{
     font-size: 1rem;
-    margin-top: 1.8rem;
+    margin-top: 1.2rem;
     padding: 10px 0;
     border-radius: 20px;
     outline: none;
@@ -217,7 +217,7 @@ p{
     align-items: center;
     margin-top: 45px;
     border-radius: 5px;
-    background-color: #262626;
+    background-color: #1b1b1b;
     color: #ffffff;
     margin: 40px;
     width: 500px;
@@ -519,22 +519,6 @@ form input{
 input:focus{
     border: 1px solid rgb(192, 192, 192);
 }
-.terms{
-    margin-top: 0.2rem;
-}
-.terms input{
-    height: 1em;
-    width: 1em;
-    vertical-align: middle;
-    cursor: pointer;
-}
-.terms label{
-    font-size: 0.7rem;
-}
-.terms a{
-    color: #ff8355;
-    text-decoration: none;
-}
 .member{
     font-size: 0.8rem;
     margin-top: 1.4rem;
@@ -560,7 +544,7 @@ input:focus{
     margin-bottom: 5px;
 }
 
-/*---------------------------------------------------------------------------Thanks Style---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------Thanks Styles---------------------------------------------------------------------------*/
 
 .container-thanks{
     display: flex;
@@ -582,6 +566,60 @@ input:focus{
     font-weight: 100;
 }
 
+/*---------------------------------------------------------------------------My account Styles---------------------------------------------------------------------------*/
+
+.container-ma{
+    margin-top: 50px;
+}
+
+.main-ma{
+    padding: 20px;
+}
+
+.sidebar{
+    background-color: #333 !important;
+    color: #fff;
+    height: 100%;
+}
+
+.sidebar a{
+    margin-left: 10px;
+    display: block;
+    color: #fff;
+    padding-bottom: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.sidebar a:hover{
+    color: #b9b9b9;
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h1{
+    font-family: 'Anton', sans-serif;
+}
+
+.content{
+    background-color: #f5f5f5 !important;
+}
+
+.card-body img{
+    height: 200px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    margin: 14px 0;
+    cursor: pointer;
+}
+
+.card-body h3{
+    font-family: 'Anton', sans-serif;
+}
 /*---------------------------------------------------------------------------Responsive Styles---------------------------------------------------------------------------*/
 
 @media (max-width: 1160px){

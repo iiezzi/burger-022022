@@ -31,9 +31,9 @@
             <div class="form-container">
                 <form action="" enctype="multipart/form-data" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
-                    <input type="text" name="txtNombre" placeholder="Nombre" class="form-control form-inputs">
-                    <input type="text" name="txtApellido" placeholder="Apellido" class="form-control form-inputs">
-                    <input type="tel" name="txtTelefono" placeholder="Teléfono" class="form-control form-inputs">
+                    <input type="text" name="txtNombre" placeholder="Nombre" class="form-control form-inputs" pattern="[a-zA-Z]+">
+                    <input type="text" name="txtApellido" placeholder="Apellido" class="form-control form-inputs"pattern="[a-zA-Z]+">
+                    <input type="tel" name="txtTelefono" placeholder="Teléfono" class="form-control form-inputs"pattern="[0-9]+">
                     <input type="email" name="txtCorreo" placeholder="Correo" class="form-control form-inputs">
                     <label for="txtCurriculum" class="label-contact">Adjunta tu curriculum vitae:</label>
                     <input type="file" name="txtCurriculum" placeholder="Curriculum" class="form-control form-inputs">

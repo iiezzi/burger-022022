@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Entidades\Cliente;
+use Mockery\Generator\StringManipulation\Pass\Pass;
 use Illuminate\Http\Request;
 use Session;
 
@@ -21,6 +22,15 @@ class ControladorWebSignup extends Controller
         $dni = $request->input('txtDni');
         $celular = $request->input('txtCelular');
         $clave = $request->input('txtClave');
+
+        $cliente = new Cliente();
+        $cliente->obtenerPorCorreo($correo);
+        
+        if($correo==$cliente->correo){
+            $msg["msg"] = "Este correo ya se encuentra registrado.";
+            $msg["estado"] = "danger";
+            return view("web.signup", compact('msg'));
+        }
 
         $cliente = new Cliente();
         $cliente->nombre = $nombre;

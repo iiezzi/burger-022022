@@ -22,19 +22,20 @@
     @section('content')
     <main id="signup-main">
         <div class="signup-container">
-            <h1 class="tittle-signup">Registrate</h1>
+            <h1 class="tittle-signup">Regístrate</h1>
+            @if(isset($msg))
+                <div class="alert alert-{{ $msg['estado'] }}" role="alert">
+                  {{$msg["msg"]}}
+                </div>
+              @endif
             <form action="" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
-                <input type="text" id="txtNombre" name="txtNombre" placeholder="Nombre">
-                <input type="text" id="txtApellido" name="txtApellido" placeholder="Apellido">
-                <input type="text" id="txtCorreo" name="txtCorreo" placeholder="Correo">
-                <input type="text" id="txtDni" name="txtDni" placeholder="Documento (D.N.I)">
-                <input type="text" id="txtCelular" name="txtCelular" placeholder="Celular">
-                <input type="password" id="txtClave" name="txtClave" placeholder="Clave">
-                <div class="terms">
-                    <input type="checkbox" name="" id="checkbox">
-                    <label for="checkbox"> Estoy de acuerdo con los <a href="">Términos & Condiciones</a></label>
-                </div>
+                <input type="text" id="txtNombre" name="txtNombre" placeholder="Nombre" pattern="[a-zA-Z]+" required>
+                <input type="text" id="txtApellido" name="txtApellido" placeholder="Apellido" pattern="[a-zA-Z]+" required>
+                <input type="text" id="txtCorreo" name="txtCorreo" placeholder="Correo" required>
+                <input type="text" id="txtDni" name="txtDni" placeholder="Documento (D.N.I)" pattern="[0-9]+" required>
+                <input type="text" id="txtCelular" name="txtCelular" placeholder="Celular" pattern="[0-9]+" required>
+                <input type="password" id="txtClave" name="txtClave" placeholder="Clave" pattern="[a-zA-Z]+" pattern="[0-9]+"required>
                 <button type="submit" id="btnRegister" name="btnRegister" class="btn-signup">Registrarse</button>
             </form>
             <div class="member">

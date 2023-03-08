@@ -21,7 +21,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contacto</a>
                 </li>
-                @if(Session::get("idcliente") >0)
+                @if(Session::get("idcliente") > 0)
                 <li class="nav-item">
                     <a class="nav-link" href="/myaccount">Mi cuenta</a>
                 </li>
@@ -30,13 +30,13 @@
                 </li>
                 @endif
             </ul>
-            @if(Session::get("idcliente") >0)
+            @if(Session::get("idcliente") > 0)
             <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                <a class="btn-contact" href="/logout">Cerrar sesion</a>
+                <a class="btn-contact" href="/logout">Cerrar sesión</a>
             </div>
             @else
             <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                <a class="btn-contact" href="/login">Iniciar sesion</a>
+                <a class="btn-contact" href="/login">Iniciar sesión</a>
             </div>
             @endif
         </div>
