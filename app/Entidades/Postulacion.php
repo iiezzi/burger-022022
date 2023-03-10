@@ -7,47 +7,47 @@ use Illuminate\Database\Eloquent\Model;
 
 class Postulacion extends Model
 {
-      protected $table = 'postulaciones';
-      public $timestamps = false;
-  
-      protected $fillable = [
-          'idpostulacion', 'nombre', 'apellido', 'telefono', 'correo', 'curriculum',
-      ];
-  
-      protected $hidden = [];
+    protected $table = 'postulaciones';
+    public $timestamps = false;
 
-      public function cargarDesdeRequest($request)
-      {
-          $this->idpostulacion = $request->input('id') != "0" ? $request->input('id') : $this->idpostulacion;
-          $this->nombre = $request->input('txtNombre');
-          $this->apellido = $request->input('txtApellido');
-          $this->telefono = $request->input('txtTelefono');
-          $this->correo = $request->input('txtCorreo');
-          $this->curriculum = $request->input('txtCurriculum');
-      }
+    protected $fillable = [
+        'idpostulacion', 'nombre', 'apellido', 'telefono', 'correo', 'curriculum',
+    ];
 
-      public function insertar()
-      {
-          $sql = "INSERT INTO $this->table(
+    protected $hidden = [];
+
+    public function cargarDesdeRequest($request)
+    {
+        $this->idpostulacion = $request->input('id') != "0" ? $request->input('id') : $this->idpostulacion;
+        $this->nombre = $request->input('txtNombre');
+        $this->apellido = $request->input('txtApellido');
+        $this->telefono = $request->input('txtTelefono');
+        $this->correo = $request->input('txtCorreo');
+        $this->curriculum = $request->input('txtCurriculum');
+    }
+
+    public function insertar()
+    {
+        $sql = "INSERT INTO $this->table(
                   nombre,
                   apellido,
                   telefono,
                   correo,
                   curriculum
               ) VALUES (?, ?, ?, ?, ?);";
-          $result = DB::insert($sql, [
-              $this->nombre,
-              $this->apellido,
-              $this->telefono,
-              $this->correo,
-              $this->curriculum,
-          ]);
-          return $this->idpostulacion = DB::getPdo()->lastInsertId();
-      }
+        $result = DB::insert($sql, [
+            $this->nombre,
+            $this->apellido,
+            $this->telefono,
+            $this->correo,
+            $this->curriculum,
+        ]);
+        return $this->idpostulacion = DB::getPdo()->lastInsertId();
+    }
 
-      public function obtenerPorId($idpostulacion)
-      {
-          $sql = "SELECT
+    public function obtenerPorId($idpostulacion)
+    {
+        $sql = "SELECT
                   idpostulacion,
                   nombre,
                   apellido,
@@ -55,23 +55,23 @@ class Postulacion extends Model
                   correo,
                   curriculum
                   FROM $this->table WHERE idpostulacion = $idpostulacion";
-          $lstRetorno = DB::select($sql);
-  
-          if (count($lstRetorno) > 0) {
-              $this->idpostulacion = $lstRetorno[0]->idpostulacion;
-              $this->nombre = $lstRetorno[0]->nombre;
-              $this->apellido = $lstRetorno[0]->apellido;
-              $this->telefono = $lstRetorno[0]->telefono;
-              $this->correo = $lstRetorno[0]->correo;
-              $this->curriculum = $lstRetorno[0]->curriculum;
-              return $this;
-          }
-          return null;
-      }
+        $lstRetorno = DB::select($sql);
 
-      public function obtenerTodos()
-      {
-          $sql = "SELECT
+        if (count($lstRetorno) > 0) {
+            $this->idpostulacion = $lstRetorno[0]->idpostulacion;
+            $this->nombre = $lstRetorno[0]->nombre;
+            $this->apellido = $lstRetorno[0]->apellido;
+            $this->telefono = $lstRetorno[0]->telefono;
+            $this->correo = $lstRetorno[0]->correo;
+            $this->curriculum = $lstRetorno[0]->curriculum;
+            return $this;
+        }
+        return null;
+    }
+
+    public function obtenerTodos()
+    {
+        $sql = "SELECT
                     A.idpostulacion,
                     A.nombre,
                     A.apellido,
@@ -79,18 +79,19 @@ class Postulacion extends Model
                     A.correo,
                     A.curriculum
                   FROM $this->table A ORDER BY A.nombre";
-          $lstRetorno = DB::select($sql);
-          return $lstRetorno;
-      }
-      
-      public function guardar() {
-        $sql = "UPDATE postulaciones SET
-            nombre='$this->nombre',
-            apellido='$this->apellido',
-            telefono='$this->telefono',
-            correo='$this->correo',
-            curriculum='$this->curriculum'
-            WHERE idpostulacion=?";
+        $lstRetorno = DB::select($sql);
+        return $lstRetorno;
+    }
+
+    public function guardar()
+    {
+        $sql = "UPDATE $this->table SET
+          nombre='$this->nombre',
+          apellido='$this->apellido',
+          telefono='$this->telefono',
+          correo='$this->correo',
+          curriculum='$this->curriculum'
+          WHERE idpostulacion=?";
         $affected = DB::update($sql, [$this->idpostulacion]);
     }
 

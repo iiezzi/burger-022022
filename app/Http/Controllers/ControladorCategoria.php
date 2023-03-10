@@ -24,7 +24,7 @@ class ControladorCategoria extends Controller
                 return view('sistema.pagina-error', compact('titulo', 'codigo', 'mensaje'));
             } else {
                 $categoria = new Categoria();
-                return view('categoria.categoria-nuevo', compact('titulo','categoria'));
+                return view('categoria.categoria-nuevo', compact('titulo', 'categoria'));
             }
         } else {
             return redirect('admin/login');
@@ -63,7 +63,7 @@ class ControladorCategoria extends Controller
 
         for ($i = $inicio; $i < count($aCategorias) && $cont < $registros_por_pagina; $i++) {
             $row = array();
-            $row[] = "<a href='/admin/categoria/" . $aCategorias[$i]->idcategoria."' class='btn btn-secondary'><i class='fa-solid fa-pencil'></i></a>";
+            $row[] = "<a href='/admin/categoria/" . $aCategorias[$i]->idcategoria . "' class='btn btn-secondary'><i class='fa-solid fa-pencil'></i></a>";
             $row[] = $aCategorias[$i]->nombre;
             $cont++;
             $data[] = $row;
@@ -78,10 +78,11 @@ class ControladorCategoria extends Controller
         return json_encode($json_data);
     }
 
-    public function guardar(Request $request) {
+    public function guardar(Request $request)
+    {
         try {
             //Define la entidad servicio
-            $titulo = "Modificar categoría";
+            $titulo = "Modificar categoria";
             $entidad = new Categoria();
             $entidad->cargarDesdeRequest($request);
 
@@ -103,7 +104,7 @@ class ControladorCategoria extends Controller
                     $msg["ESTADO"] = MSG_SUCCESS;
                     $msg["MSG"] = OKINSERT;
                 }
-                
+
                 $_POST["id"] = $entidad->idcategoria;
                 return view('categoria.categoria-listar', compact('titulo', 'msg'));
             }
@@ -117,7 +118,6 @@ class ControladorCategoria extends Controller
         $categoria->obtenerPorId($id);
 
         return view('categoria.categoria-nuevo', compact('msg', 'categoria', 'titulo')) . '?id=' . $categoria->idcategoria;
-
     }
 
     public function editar($id)
@@ -131,6 +131,7 @@ class ControladorCategoria extends Controller
             } else {
                 $categoria = new Categoria();
                 $categoria->obtenerPorId($id);
+
                 return view('categoria.categoria-nuevo', compact('categoria', 'titulo'));
             }
         } else {

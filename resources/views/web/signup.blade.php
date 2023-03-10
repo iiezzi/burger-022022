@@ -35,7 +35,7 @@
                 <input type="text" id="txtCorreo" name="txtCorreo" placeholder="Correo" required>
                 <input type="text" id="txtDni" name="txtDni" placeholder="Documento (D.N.I)" pattern="[0-9]+" required>
                 <input type="text" id="txtCelular" name="txtCelular" placeholder="Celular" pattern="[0-9]+" required>
-                <input type="password" id="txtClave" name="txtClave" placeholder="Clave" pattern="[a-zA-Z]+" pattern="[0-9]+"required>
+                <input type="password" id="txtClave" name="txtClave" placeholder="Clave" required>
                 <button type="submit" id="btnRegister" name="btnRegister" class="btn-signup">Registrarse</button>
             </form>
             <div class="member">

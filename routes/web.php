@@ -17,6 +17,7 @@
 Route::group(array('domain' => '127.0.0.1'), function () {
 
     Route::get('/', 'ControladorWebHome@index');
+    
     Route::get('/us', 'ControladorWebUs@index');
 
     Route::get('/contact', 'ControladorWebContact@index');
@@ -36,6 +37,9 @@ Route::group(array('domain' => '127.0.0.1'), function () {
     Route::get('/thanksregistration', 'ControladorWebThanksRegistration@index');
 
     Route::get('/myaccount', 'ControladorWebMyAccount@index');
+
+    Route::get('/editdata', 'ControladorWebEditData@index');
+    Route::post('/editdata', 'ControladorWebEditData@editar');
 
     Route::get('/replacepassword', 'ControladorWebReplacePassword@index');
     Route::post('/replacepassword', 'ControladorWebReplacePassword@guardar');

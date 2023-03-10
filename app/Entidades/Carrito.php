@@ -7,42 +7,42 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carrito extends Model
 {
-      protected $table = 'carritos';
-      public $timestamps = false;
-  
-      protected $fillable = [
-          'idcarrito', 'fk_idcliente',
-      ];
-  
-      protected $hidden = [];
+    protected $table = 'carritos';
+    public $timestamps = false;
 
-      public function insertar()
-      {
-          $sql = "INSERT INTO $this->table(
+    protected $fillable = [
+        'idcarrito', 'fk_idcliente',
+    ];
+
+    protected $hidden = [];
+
+    public function insertar()
+    {
+        $sql = "INSERT INTO $this->table(
                   fk_idcliente,
               ) VALUES (?);";
-          $result = DB::insert($sql, [
-              $this->fk_idcliente
-          ]);
-          return $this->idcarrito = DB::getPdo()->lastInsertId();
-      }
+        $result = DB::insert($sql, [
+            $this->fk_idcliente
+        ]);
+        return $this->idcarrito = DB::getPdo()->lastInsertId();
+    }
 
-      public function obtenerPorId($idcarrito)
-      {
-          $sql = "SELECT
+    public function obtenerPorId($idcarrito)
+    {
+        $sql = "SELECT
                   fk_idcliente
                   FROM $this->table WHERE idcliente = $idcarrito";
-          $lstRetorno = DB::select($sql);
-  
-          if (count($lstRetorno) > 0) {
-              $this->idcarrito = $lstRetorno[0]->idcarrito;
-              $this->fk_idcliente = $lstRetorno[0]->fk_idcliente;
-              return $this;
-          }
-          return null;
-      }
+        $lstRetorno = DB::select($sql);
 
-      public function obtenerTodos()
+        if (count($lstRetorno) > 0) {
+            $this->idcarrito = $lstRetorno[0]->idcarrito;
+            $this->fk_idcliente = $lstRetorno[0]->fk_idcliente;
+            return $this;
+        }
+        return null;
+    }
+
+    public function obtenerTodos()
     {
         $sql = "SELECT
                   A.idcarrito,
@@ -51,10 +51,11 @@ class Carrito extends Model
         $lstRetorno = DB::select($sql);
         return $lstRetorno;
     }
-      
-      public function guardar() {
-        $sql = "UPDATE carritos SET
-            fk_idcliente='$this->fk_idcliente'
+
+    public function guardar()
+    {
+        $sql = "UPDATE $this->table SET
+            fk_idcliente=$this->fk_idcliente
             WHERE idcarrito=?";
         $affected = DB::update($sql, [$this->idcarrito]);
     }

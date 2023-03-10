@@ -83,35 +83,25 @@ class ControladorPostulacion extends Controller
     {
         try {
             //Define la entidad servicio
-            $titulo = "Modificar postulación";
+            $titulo = "Modificar postulacion";
             $entidad = new Postulacion();
             $entidad->cargarDesdeRequest($request);
 
-            if ($_FILES["archivo"]["error"] === UPLOAD_ERR_OK) { //Se adjunta imagen
+            if ($_FILES["archivo"]["error"] === UPLOAD_ERR_OK) {
                 $extension = pathinfo($_FILES["archivo"]["name"], PATHINFO_EXTENSION);
-                $nombre = date("Ymdhmsi") . ".$extension";
+                $nombre = date("Ymdhmsi") . ".$extension"; //genera un nombre aleatorio con año, fecha y hora
                 $archivo = $_FILES["archivo"]["tmp_name"];
-                move_uploaded_file($archivo, env('APP_PATH') . "/public/files/$nombre"); //guardaelarchivo
-                $entidad->curriculum = $nombre;
+                if ($extension == "pdf" || $extension == "doc"  || $extension == "docx") {
+                    move_uploaded_file($archivo, env('APP_PATH') . "/public/files/$nombre"); //guarda el archivo fisicamente 
+                    $entidad->curriculum = $nombre;
+                }
             }
-
             //validaciones
             if ($entidad->nombre == "") {
                 $msg["ESTADO"] = MSG_ERROR;
                 $msg["MSG"] = "Complete todos los datos";
             } else {
                 if ($_POST["id"] > 0) {
-
-                    $postulacionAux = new Postulacion();
-                    $postulacionAux->obtenerPorId($entidad->idpostulacion);
-
-                    if ($_FILES["archivo"]["error"] === UPLOAD_ERR_OK) {
-                        //Eliminar imagen anterior
-                        @unlink(env('APP_PATH') . "/public/files/$postulacionAux->imagen");
-                    } else {
-                        $entidad->curriculum = $postulacionAux->imagen;
-                    }
-
                     //Es actualizacion
                     $entidad->guardar();
 
@@ -133,17 +123,17 @@ class ControladorPostulacion extends Controller
             $msg["MSG"] = ERRORINSERT;
         }
 
-        $id = $entidad->postulacion;
+        $id = $entidad->idpostulacion;
         $postulacion = new Postulacion();
         $postulacion->obtenerPorId($id);
 
-        return view('postulacion.postulacion-nuevo', compact('msg', 'postulacion', 'titulo')) . '?id=' . $postulacion->idpostulacion;
+        return view('postulacion.postulacion-nuevo', compact('msg', 'sucursal', 'titulo')) . '?id=' . $postulacion->idpostulacion;
     }
 
 
     public function editar($id)
     {
-        $titulo = "Modificar postulación";
+        $titulo = "Modificar postulacion";
         if (Usuario::autenticado() == true) {
             if (!Patente::autorizarOperacion("POSTULANTEEDITAR")) {
                 $codigo = "POSTULANTEEDITAR";
@@ -152,6 +142,7 @@ class ControladorPostulacion extends Controller
             } else {
                 $postulacion = new Postulacion();
                 $postulacion->obtenerPorId($id);
+
                 return view('postulacion.postulacion-nuevo', compact('postulacion', 'titulo'));
             }
         } else {
@@ -168,7 +159,7 @@ class ControladorPostulacion extends Controller
 
                 $entidad = new Postulacion();
                 $entidad->cargarDesdeRequest($request);
-                @unlink(env('APP_PATH')."/public/files/$entidad->imagen");
+                @unlink(env('APP_PATH') . "/public/files/$entidad->imagen");
                 $entidad->eliminar();
 
                 $aResultado["err"] = EXIT_SUCCESS; //eliminado correctamente

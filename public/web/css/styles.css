@@ -35,6 +35,9 @@ html{
 #thankspostulation{
     background-color: #ff8355;
 }
+#edit-data{
+    background-color: #333;
+}
 
 /*---------------------------------------------------------------------------Pages Styles---------------------------------------------------------------------------*/
 
@@ -619,6 +622,66 @@ input:focus{
 
 .card-body h3{
     font-family: 'Anton', sans-serif;
+}
+/*---------------------------------------------------------------------------Edit-data Styles---------------------------------------------------------------------------*/
+
+.form_container{
+    margin: 40px;
+    text-align: center;
+}
+
+.tittle-edit{
+    margin-bottom: 30px;
+}
+
+/*---------------------------------------------------------------------------Cart Styles---------------------------------------------------------------------------*/
+
+#cart-container table{
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart-container table, thead{
+    font-weight: 700;
+}
+
+#cart-container table thead td{
+    background: #ffc155;
+    color: #fff;
+    border: none;
+    padding: 6px 0px;
+}
+
+#cart-container table td{
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#cart-container table td::nth-child(1){
+    width: 100px;
+}
+
+#cart-container table td::nth-child(2)
+#cart-container table td::nth-child(3){
+    width: 200px;
+}
+
+#cart-container table td::nth-child(4)
+#cart-container table td::nth-child(5)
+#cart-container table td::nth-child(6){
+    width: 170px;
+}
+
+#cart-container table tbody img{
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+}
+
+#cart-container table tbody i{
+    color: red;
 }
 /*---------------------------------------------------------------------------Responsive Styles---------------------------------------------------------------------------*/
 

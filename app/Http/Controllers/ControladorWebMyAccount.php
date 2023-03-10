@@ -14,6 +14,9 @@ class ControladorWebMyAccount extends Controller
         $cliente = new Cliente();
         $cliente->obtenerPorId(Session::get('idcliente'));
 
-            return view("web.myaccount", compact('cliente'));
+        $pedido = new Pedido();
+        $aPedidos=$pedido->obtenerPorCliente(Session::get("idcliente"));
+
+            return view("web.myaccount", compact('cliente', 'aPedidos'));
     }
 }

@@ -24,7 +24,7 @@ class ControladorProducto extends Controller
             } else {
                 $producto = new Producto();
                 $categoria = new Categoria();
-                $aCategorias = $categoria -> obtenerTodos();
+                $aCategorias = $categoria->obtenerTodos();
                 return view('producto.producto-nuevo', compact('titulo', 'producto', 'aCategorias'));
             }
         } else {
@@ -64,11 +64,11 @@ class ControladorProducto extends Controller
 
         for ($i = $inicio; $i < count($aProductos) && $cont < $registros_por_pagina; $i++) {
             $row = array();
-            $row[] = "<a href='/admin/producto/" . $aProductos[$i]->idproducto."' class='btn btn-secondary'><i class='fa-solid fa-pencil'></i></a>";
+            $row[] = "<a href='/admin/producto/" . $aProductos[$i]->idproducto . "' class='btn btn-secondary'><i class='fa-solid fa-pencil'></i></a>";
             $row[] = $aProductos[$i]->nombre;
             $row[] = $aProductos[$i]->cantidad;
-            $row[] = "$" . number_format($aProductos[$i]->precio, 2,",",".");
-            $row[] = "<img src='/files/".$aProductos[$i]->imagen."' class='img-thumbnail'>";
+            $row[] = "$" . number_format($aProductos[$i]->precio, 2, ",", ".");
+            $row[] = "<img src='/files/" . $aProductos[$i]->imagen . "' class='img-thumbnail'>";
             $row[] = $aProductos[$i]->categoria;
             $cont++;
             $data[] = $row;
@@ -83,7 +83,8 @@ class ControladorProducto extends Controller
         return json_encode($json_data);
     }
 
-    public function guardar(Request $request) {
+    public function guardar(Request $request)
+    {
         try {
             //Define la entidad servicio
             $titulo = "Modificar producto";
@@ -92,12 +93,13 @@ class ControladorProducto extends Controller
 
             if ($_FILES["archivo"]["error"] === UPLOAD_ERR_OK) { //Se adjunta imagen
                 $extension = pathinfo($_FILES["archivo"]["name"], PATHINFO_EXTENSION);
-                 $nombre = date("Ymdhmsi") . ".$extension";
-                 $archivo = $_FILES["archivo"]["tmp_name"];
-                 move_uploaded_file($archivo, env('APP_PATH') . "/public/files/$nombre"); //guardaelarchivo
-                 $entidad->imagen = $nombre;
-             }
-  
+                $nombre = date("Ymdhmsi") . ".$extension";
+                $archivo = $_FILES["archivo"]["tmp_name"];
+                move_uploaded_file($archivo, env('APP_PATH') . "/public/files/$nombre"); //guardaelarchivo
+                $entidad->imagen = $nombre;
+            }
+
+
             //validaciones
             if ($entidad->nombre == "") {
                 $msg["ESTADO"] = MSG_ERROR;
@@ -107,9 +109,9 @@ class ControladorProducto extends Controller
                     $productAnt = new Producto();
                     $productAnt->obtenerPorId($entidad->idproducto);
 
-                    if($_FILES["archivo"]["error"] === UPLOAD_ERR_OK){
+                    if ($_FILES["archivo"]["error"] === UPLOAD_ERR_OK) {
                         //Eliminar imagen anterior
-                        @unlink(env('APP_PATH') . "/public/files/$productAnt->imagen");                          
+                        @unlink(env('APP_PATH') . "/public/files/$productAnt->imagen");
                     } else {
                         $entidad->imagen = $productAnt->imagen;
                     }
@@ -126,7 +128,7 @@ class ControladorProducto extends Controller
                     $msg["ESTADO"] = MSG_SUCCESS;
                     $msg["MSG"] = OKINSERT;
                 }
-                
+
                 $_POST["id"] = $entidad->idproducto;
                 return view('producto.producto-listar', compact('titulo', 'msg'));
             }
@@ -140,7 +142,6 @@ class ControladorProducto extends Controller
         $producto->obtenerPorId($id);
 
         return view('producto.producto-nuevo', compact('msg', 'producto', 'titulo')) . '?id=' . $producto->idproducto;
-
     }
 
     public function editar($id)
@@ -154,9 +155,11 @@ class ControladorProducto extends Controller
             } else {
                 $producto = new Producto();
                 $producto->obtenerPorId($id);
+
                 $categoria = new Categoria();
-                $aCategorias = $categoria -> obtenerTodos();
-                return view('producto.producto-nuevo', compact('producto', 'titulo','aCategorias'));
+                $aCategorias = $categoria->obtenerTodos();
+
+                return view('producto.producto-nuevo', compact('producto', 'aCategorias', 'titulo'));
             }
         } else {
             return redirect('admin/login');
@@ -172,7 +175,7 @@ class ControladorProducto extends Controller
 
                 $entidad = new Producto();
                 $entidad->cargarDesdeRequest($request);
-                @unlink(env('APP_PATH')."/public/files/$entidad->imagen");
+                @unlink(env('APP_PATH') . "/public/files/$entidad->imagen");
                 $entidad->eliminar();
 
                 $aResultado["err"] = EXIT_SUCCESS; //eliminado correctamente

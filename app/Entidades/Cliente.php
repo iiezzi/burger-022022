@@ -109,14 +109,24 @@ class Cliente extends Model
 
     public function guardar()
     {
-        $sql = "UPDATE clientes SET
+        if ($this->clave != "") {
+            $sql = "UPDATE $this->table SET
             nombre='$this->nombre',
-            apellido=$this->apellido,
-            correo=$this->correo,
-            dni=$this->dni,
+            apellido='$this->apellido',
+            correo='$this->correo',
+            dni='$this->dni',
             celular='$this->celular',
             clave='$this->clave'
             WHERE idcliente=?";
+        } else {
+            $sql = "UPDATE $this->table SET
+            nombre='$this->nombre',
+            apellido='$this->apellido',
+            correo='$this->correo',
+            dni='$this->dni',
+            celular='$this->celular'
+            WHERE idcliente=?";
+        }
         $affected = DB::update($sql, [$this->idcliente]);
     }
 

@@ -60,7 +60,7 @@ class ControladorSucursal extends Controller
 
         for ($i = $inicio; $i < count($aSucursales) && $cont < $registros_por_pagina; $i++) {
             $row = array();
-            $row[] = "<a href='/admin/sucursal/" . $aSucursales[$i]->idsucursal."' class='btn btn-secondary'><i class='fa-solid fa-pencil'></i></a>";
+            $row[] = "<a href='/admin/sucursal/" . $aSucursales[$i]->idsucursal . "' class='btn btn-secondary'><i class='fa-solid fa-pencil'></i></a>";
             $row[] = $aSucursales[$i]->nombre;
             $row[] = $aSucursales[$i]->telefono;
             $row[] = $aSucursales[$i]->direccion;
@@ -78,7 +78,8 @@ class ControladorSucursal extends Controller
         return json_encode($json_data);
     }
 
-    public function guardar(Request $request) {
+    public function guardar(Request $request)
+    {
         try {
             //Define la entidad servicio
             $titulo = "Modificar sucursal";
@@ -103,7 +104,7 @@ class ControladorSucursal extends Controller
                     $msg["ESTADO"] = MSG_SUCCESS;
                     $msg["MSG"] = OKINSERT;
                 }
-                
+
                 $_POST["id"] = $entidad->idsucursal;
                 return view('sucursal.sucursal-listar', compact('titulo', 'msg'));
             }
@@ -112,25 +113,25 @@ class ControladorSucursal extends Controller
             $msg["MSG"] = ERRORINSERT;
         }
 
-        $id = $entidad->sucursal;
+        $id = $entidad->idsucursal;
         $sucursal = new Sucursal();
         $sucursal->obtenerPorId($id);
 
         return view('sucursal.sucursal-nuevo', compact('msg', 'sucursal', 'titulo')) . '?id=' . $sucursal->idsucursal;
-
     }
 
     public function editar($id)
     {
-        $titulo = "Modificar sucursal";
+        $titulo = "Modificar Sucursal";
         if (Usuario::autenticado() == true) {
-            if (!Patente::autorizarOperacion("SUCURSALEDITAR")) {
+            if (!Patente::autorizarOperacion("SUCURUSALEDITAR")) {
                 $codigo = "SUCURSALEDITAR";
                 $mensaje = "No tiene pemisos para la operaci&oacute;n.";
                 return view('sistema.pagina-error', compact('titulo', 'codigo', 'mensaje'));
             } else {
                 $sucursal = new Sucursal();
                 $sucursal->obtenerPorId($id);
+
                 return view('sucursal.sucursal-nuevo', compact('sucursal', 'titulo'));
             }
         } else {

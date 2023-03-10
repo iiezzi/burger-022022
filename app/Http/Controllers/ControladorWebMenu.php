@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Entidades\Producto;
 use App\Entidades\Categoria;
-use Session;
 class ControladorWebMenu extends Controller
 {
     public function index()

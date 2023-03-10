@@ -22,7 +22,7 @@ class ControladorEstado extends Controller
                 return view('sistema.pagina-error', compact('titulo', 'codigo', 'mensaje'));
             } else {
                 $estado = new Estado();
-                return view('estado.estado-nuevo', compact('titulo','estado'));
+                return view('estado.estado-nuevo', compact('titulo', 'estado'));
             }
         } else {
             return redirect('admin/login');
@@ -61,7 +61,7 @@ class ControladorEstado extends Controller
 
         for ($i = $inicio; $i < count($aEstados) && $cont < $registros_por_pagina; $i++) {
             $row = array();
-            $row[] = "<a href='/admin/estado/" . $aEstados[$i]->idestado."' class='btn btn-secondary'><i class='fa-solid fa-pencil'></i></a>";
+            $row[] = "<a href='/admin/estado/" . $aEstados[$i]->idestado . "' class='btn btn-secondary'><i class='fa-solid fa-pencil'></i></a>";
             $row[] = $aEstados[$i]->nombre;
             $cont++;
             $data[] = $row;
@@ -76,7 +76,8 @@ class ControladorEstado extends Controller
         return json_encode($json_data);
     }
 
-    public function guardar(Request $request) {
+    public function guardar(Request $request)
+    {
         try {
             //Define la entidad servicio
             $titulo = "Modificar estado";
@@ -101,7 +102,7 @@ class ControladorEstado extends Controller
                     $msg["ESTADO"] = MSG_SUCCESS;
                     $msg["MSG"] = OKINSERT;
                 }
-                
+
                 $_POST["id"] = $entidad->idestado;
                 return view('estado.estado-listar', compact('titulo', 'msg'));
             }
@@ -115,7 +116,6 @@ class ControladorEstado extends Controller
         $estado->obtenerPorId($id);
 
         return view('estado.estado-nuevo', compact('msg', 'estado', 'titulo')) . '?id=' . $estado->idestado;
-
     }
 
     public function editar($id)
@@ -129,6 +129,7 @@ class ControladorEstado extends Controller
             } else {
                 $estado = new Estado();
                 $estado->obtenerPorId($id);
+
                 return view('estado.estado-nuevo', compact('estado', 'titulo'));
             }
         } else {

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Entidades\Pedido; 
-use App\Entidades\Sucursal; 
-use App\Entidades\Cliente; 
-use App\Entidades\Estado; 
+use App\Entidades\Pedido;
+use App\Entidades\Sucursal;
+use App\Entidades\Cliente;
+use App\Entidades\Estado;
 use App\Entidades\Sistema\Patente;
 use App\Entidades\Sistema\Usuario;
 use Illuminate\Http\Request;
@@ -26,11 +26,11 @@ class ControladorPedido extends Controller
             } else {
                 $pedido = new Pedido();
                 $sucursal = new Sucursal();
-                $aSucursales = $sucursal -> obtenerTodos();
+                $aSucursales = $sucursal->obtenerTodos();
                 $cliente = new Cliente();
-                $aClientes = $cliente -> obtenerTodos();
+                $aClientes = $cliente->obtenerTodos();
                 $estado = new Estado();
-                $aEstados = $estado -> obtenerTodos();
+                $aEstados = $estado->obtenerTodos();
                 return view('pedido.pedido-nuevo', compact('titulo', 'pedido', 'aSucursales', 'aClientes', 'aEstados'));
             }
         } else {
@@ -70,12 +70,12 @@ class ControladorPedido extends Controller
 
         for ($i = $inicio; $i < count($aPedidos) && $cont < $registros_por_pagina; $i++) {
             $row = array();
-            $row[] = "<a href='/admin/pedido/" . $aPedidos[$i]->idpedido."' class='btn btn-secondary'><i class='fa-solid fa-pencil'></i></a>";
+            $row[] = "<a href='/admin/pedido/" . $aPedidos[$i]->idpedido . "' class='btn btn-secondary'><i class='fa-solid fa-pencil'></i></a>";
             $row[] = date_format(date_create($aPedidos[$i]->fecha), "d/m/Y");
             $row[] = $aPedidos[$i]->descripcion;
             $row[] = $aPedidos[$i]->total;
             $row[] = $aPedidos[$i]->sucursal;
-            $row[] = "<a href='/admin/cliente/'". $aPedidos[$i]->fk_idcliente . "class='btn btn-secondary'>".$aPedidos[$i]->cliente."</a>";
+            $row[] = "<a href='/admin/cliente/'" . $aPedidos[$i]->fk_idcliente . "class='btn btn-secondary'>" . $aPedidos[$i]->cliente . "</a>";
             $row[] = $aPedidos[$i]->estado;
             $cont++;
             $data[] = $row;
@@ -90,7 +90,8 @@ class ControladorPedido extends Controller
         return json_encode($json_data);
     }
 
-    public function guardar(Request $request) {
+    public function guardar(Request $request)
+    {
         try {
             //Define la entidad servicio
             $titulo = "Modificar pedido";
@@ -98,10 +99,11 @@ class ControladorPedido extends Controller
             $entidad->cargarDesdeRequest($request);
 
             //validaciones
-            if ($entidad->fecha == "") {
+            if ($entidad->fk_idcliente == "" || $entidad->fecha == "") {
                 $msg["ESTADO"] = MSG_ERROR;
                 $msg["MSG"] = "Complete todos los datos";
             } else {
+
                 if ($_POST["id"] > 0) {
                     //Es actualizacion
                     $entidad->guardar();
@@ -115,7 +117,7 @@ class ControladorPedido extends Controller
                     $msg["ESTADO"] = MSG_SUCCESS;
                     $msg["MSG"] = OKINSERT;
                 }
-                
+
                 $_POST["id"] = $entidad->idpedido;
                 return view('pedido.pedido-listar', compact('titulo', 'msg'));
             }
@@ -129,7 +131,6 @@ class ControladorPedido extends Controller
         $pedido->obtenerPorId($id);
 
         return view('pedido.pedido-nuevo', compact('msg', 'pedido', 'titulo')) . '?id=' . $pedido->idpedido;
-
     }
 
     public function editar($id)
@@ -143,7 +144,20 @@ class ControladorPedido extends Controller
             } else {
                 $pedido = new Pedido();
                 $pedido->obtenerPorId($id);
-                return view('pedido.pedido-nuevo', compact('pedido', 'titulo'));
+
+                $sucursal = new Sucursal();
+                $aSucursales = $sucursal->obtenerTodos();
+                // print_r($aSucursales);
+                // exit;
+                $cliente = new Cliente();
+                $aClientes = $cliente->obtenerTodos();
+
+                $estado = new Estado();
+                $aEstados = $estado->obtenerTodos();
+
+                //print_r("obtiene los clientes, estados y sucursales");
+                //exit;
+                return view('pedido.pedido-nuevo', compact('pedido', 'aSucursales', 'aClientes', 'aEstados', 'titulo'));
             }
         } else {
             return redirect('admin/login');
